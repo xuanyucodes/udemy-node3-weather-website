@@ -1,8 +1,8 @@
 const express = require('express') 
 const path = require('path') // to manipulate paths
 const hbs = require('hbs')
-const geocode = require('./geocode')
-const forecast = require('./forecast')
+const geocode = require('./utils/geocode')
+const forecast = require('./utils/forecast')
 
 const app = express() // initialise. no args needed.
 const port = process.env.PORT || 3000 // port is either 3000 (locally) OR process.env.PORT that Heroku sets

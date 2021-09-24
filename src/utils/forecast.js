@@ -10,7 +10,7 @@ const forecast = (lat, log, callback) => {
             callback(chalk.bgRed(body.error.info), undefined)
         } else {
             const data = body.current
-            callback(undefined, `${body.location.name}, ${body.location.country}. ${data.weather_descriptions[0]}. It is currently ${data.temperature} degrees out. It feels like ${data.feelslike} degrees out.`)
+            callback(undefined, `${body.location.name}, ${body.location.country}. ${data.weather_descriptions[0]}. It is currently ${data.temperature} degrees out. It feels like ${data.feelslike} degrees out. The humidity is ${data.humidity}%.`)
         }
     })
 }
