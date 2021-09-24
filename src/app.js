@@ -87,3 +87,5 @@ app.get('*', (req, res) => { // 404 handling
 app.listen(port, () => {
     console.log(`Server is up on port ${port}.`)
 })
+
+// https://xy-weather-application.herokuapp.com/
