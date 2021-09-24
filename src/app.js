@@ -5,6 +5,7 @@ const geocode = require('./geocode')
 const forecast = require('./forecast')
 
 const app = express() // initialise. no args needed.
+const port = process.env.PORT || 3000 // port is either 3000 (locally) OR process.env.PORT that Heroku sets
 
 // path definitions
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -83,19 +84,6 @@ app.get('*', (req, res) => { // 404 handling
 })
 
 // run it
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}.`)
 })
-
-// just testing
-// app.get('/products', (req, res) => {
-//     if (!req.query.search) {
-//         return res.send({
-//             error: 'You must provide a search term'
-//         })
-//     }
-//     console.log(req.query)
-//     res.send({
-//         products: []
-//     })
-// })
